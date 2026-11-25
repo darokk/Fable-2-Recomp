@@ -55,7 +55,7 @@ Delete the `Fable2-SteamDeck` folder (it holds everything: game files, saves, se
 ### Known issues
 
 - A texture or object can occasionally render wrong for a single frame (as in the Windows version).
-- In Desktop Mode, the window can stay white for several seconds at start-up before the first video. Gaming Mode isn't affected.
+- On start-up the window can stay white for up to several minutes before the first video. Enabling the Skip Intro Videos setting seems to improve this.
 
 If something goes wrong, the game shows an error with the path of its log file. For a bug report, set `log_level = "info"` in `fable_2.toml`, reproduce the problem and [open an issue](https://github.com/darokk/Fable-2-Recomp/issues) with the newest file from `logs/`.
 
