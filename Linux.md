@@ -297,6 +297,20 @@ frame_limit = 60
 guest_vblank_pacing = false
 ```
 
+**FSR 1.0 upscaling.** Linux builds made with `./build.sh` can use ReXGlue's
+bundled Vulkan shaders to scale the game's output to the window. Bilinear
+scaling is the default. To opt in, add this to `fable_2.toml` and restart:
+
+```toml
+present_effect = "fsr"
+```
+
+For a one-off comparison, pass `--present_effect=fsr` or
+`--present_effect=bilinear` to `./run.sh` or `./Fable2.sh`. Keep the same
+window size and compare after the shaders have warmed up. FSR 1.0 uses the
+existing game render resolution and does not need the optional FidelityFX
+runtime.
+
 **Button icons:** the button prompts show the Steam Deck's buttons (L1/R1,
 L2/R2, View/Menu, ...) in the game's own style, in the pub games too (their
 movies are rewritten at start-up; the untouched copy is kept as

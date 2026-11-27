@@ -31,6 +31,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Needed by the recomp-level patch step below (tools/apply_recomp_patches.py).
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
 
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux" AND REXSDK_DIR)
+    add_compile_definitions(REX_HAS_FIDELITYFX_SDK=1)
+endif()
 include(generated/rexglue.cmake)
 set(FABLE2_CODEGEN_TOOL "" CACHE FILEPATH "Standalone compatible ReXGlue codegen tool")
 if(FABLE2_CODEGEN_TOOL)
